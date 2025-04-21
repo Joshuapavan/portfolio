@@ -11,7 +11,7 @@ const Skills = ({ techStack }) => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                 >
-                    Technologies That I've Worked With
+                    Technologies, I've Worked With
                 </motion.h2>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     {techStack.map((tech, index) => (

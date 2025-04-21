@@ -38,7 +38,7 @@ const About = ({ experiences }) => {
             transition={{ delay: 0.3 }}
           >
             <h3 className="text-2xl font-semibold mb-8 text-center bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-              My Experience
+              Experience
             </h3>
             <div className="relative space-y-12">
               {/* Vertical Line - Show on all screens */}

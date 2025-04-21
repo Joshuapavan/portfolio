@@ -77,6 +77,14 @@ function App() {
       name: 'Dart',
       logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/dart/dart-original.svg'
     },
+    {
+      name: 'Android',
+      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original.svg'
+    },
+    {
+      name: 'Linux',
+      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg'
+    }
   ]
 
   const experiences = [

@@ -67,6 +67,14 @@ const Hero = () => {
     {
       name: 'Dart',
       logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/dart/dart-original.svg'
+    },
+    {
+      name: 'Android',
+      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original.svg'
+    },
+    {
+      name: 'Linux',
+      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg'
     }
   ]
 
@@ -142,6 +150,7 @@ const Hero = () => {
                 whileHover={{ 
                   backgroundColor: "rgba(17, 24, 39, 0.7)",
                   scale: 1.05,
+                  boxShadow: "0 0 10px rgba(96, 165, 250, 0.3)",
                   transition: { duration: 0.2 }
                 }}
                 initial={{ opacity: 0, y: 20 }}
@@ -151,7 +160,7 @@ const Hero = () => {
                 <img 
                   src={tech.logo} 
                   alt={tech.name}
-                  className={`w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 transition-transform duration-300 group-hover:rotate-12 ${tech.className || ''}`}
+                  className={`w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 transition-transform duration-300 group-hover:scale-110 ${tech.className || ''}`}
                 />
                 <span className="text-xs sm:text-sm md:text-base font-medium bg-gradient-to-r from-gray-100 to-gray-300 group-hover:from-blue-400 group-hover:to-purple-500 bg-clip-text text-transparent transition-all duration-300">
                   {tech.name}
