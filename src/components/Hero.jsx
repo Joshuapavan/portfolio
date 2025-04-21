@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import ExpressLogo from "../assets/tech_logos/express_logo.png"
 
 const Hero = () => {
   const containerVariants = {
