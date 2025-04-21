@@ -11,7 +11,7 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            My Projects
+            Projects
           </motion.h2>
           <div className="grid md:grid-cols-2 gap-8">
             {[
