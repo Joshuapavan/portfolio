@@ -13,6 +13,7 @@ import Websites from './components/Websites'
 import Preloader from './components/Preloader'
 import CCLogo from "../src/assets/company_logos/cognitive_clouds_logo.png"
 import MagicLogo from "../src/assets/company_logos/magic_edtech_logo.jpeg"
+import ExpressLogo from "./assets/tech_logos/express_logo.png"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -38,7 +39,8 @@ function App() {
     },
     {
       name: 'Express',
-      logo: 'https://www.vectorlogo.zone/logos/expressjs/expressjs-ar21.svg'
+      logo: 'https://www.vectorlogo.zone/logos/expressjs/expressjs-icon.svg',
+      className: 'invert brightness-0'
     },
     {
       name: 'Flutter',

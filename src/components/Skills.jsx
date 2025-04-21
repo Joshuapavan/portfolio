@@ -31,7 +31,7 @@ const Skills = ({ techStack }) => {
                         <img 
                             src={tech.logo} 
                             alt={tech.name}
-                            className="w-12 h-12 group-hover:scale-110 transition-transform duration-300"
+                            className={`w-12 h-12 group-hover:scale-110 transition-transform duration-300 ${tech.className || ''}`}
                         />
                         <span className="text-gray-300 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-500 transition-colors duration-300">
                             {tech.name}

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import ExpressLogo from "../assets/tech_logos/express_logo.png"
 
 const Hero = () => {
   const containerVariants = {
@@ -42,8 +43,9 @@ const Hero = () => {
       logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg'
     },
     {
-      name: 'Express',
-      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg'
+        name: 'Express',
+        logo: 'https://www.vectorlogo.zone/logos/expressjs/expressjs-icon.svg',
+        className: 'invert brightness-0'
     },
     {
       name: 'Flutter',
@@ -160,7 +162,7 @@ const Hero = () => {
                 <img 
                   src={tech.logo} 
                   alt={tech.name}
-                  className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 transition-transform duration-300 group-hover:rotate-12"
+                  className={`w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 transition-transform duration-300 group-hover:rotate-12 ${tech.className || ''}`}
                 />
                 <span className="text-xs sm:text-sm md:text-base font-medium bg-gradient-to-r from-gray-100 to-gray-300 group-hover:from-blue-400 group-hover:to-purple-500 bg-clip-text text-transparent transition-all duration-300">
                   {tech.name}
