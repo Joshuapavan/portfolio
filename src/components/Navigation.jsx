@@ -13,59 +13,65 @@ const Navigation = () => {
 
   return (
     <motion.nav 
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
+      initial={{ y: 0, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, delay: 0.2 }}
       className="fixed w-full bg-black/80 backdrop-blur-lg z-50 py-4 border-b border-gray-800"
     >
-      <div className="container mx-auto px-4 flex justify-center items-center relative">
-        {/* Mobile Menu Button - Position absolutely */}
-        <button 
-          className="md:hidden p-2 absolute left-4"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          <div className="w-6 h-5 flex flex-col justify-between">
-            <span className={`w-full h-0.5 bg-gray-300 transform transition-all ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-            <span className={`w-full h-0.5 bg-gray-300 transform transition-opacity ${isMenuOpen ? 'opacity-0' : ''}`}></span>
-            <span className={`w-full h-0.5 bg-gray-300 transform transition-all ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+      <div className="container mx-auto px-4">
+        <div className="flex justify-end md:justify-center items-center">
+          {/* Desktop Menu */}
+          <div className="hidden md:flex space-x-12">
+            {['Home', 'About', 'Technologies', 'Projects', 'Contact'].map((item) => (
+              <motion.a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                className="text-gray-300 hover:text-blue-400 relative group text-sm lg:text-base"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={(e) => handleClick(e, item.toLowerCase())}
+              >
+                {item}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 group-hover:w-full transition-all duration-300"/>
+              </motion.a>
+            ))}
           </div>
-        </button>
 
-        {/* Desktop Menu - Now centered */}
-        <div className="hidden md:flex space-x-12">
-          {['Home', 'About', 'Technologies', 'Projects', 'Contact'].map((item) => (
-            <motion.a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="hover:text-blue-400 relative group"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={(e) => handleClick(e, item.toLowerCase())}
-            >
-              {item}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 group-hover:w-full transition-all duration-300"/>
-            </motion.a>
-          ))}
+          {/* Mobile Menu Button - Hide initially */}
+          <button 
+            className="md:hidden p-2 z-50 opacity-0 animate-fade-in"
+            style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <div className="w-6 h-5 flex flex-col justify-between">
+              <span className={`w-full h-0.5 bg-gray-300 transform transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+              <span className={`w-full h-0.5 bg-gray-300 transform transition-opacity duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
+              <span className={`w-full h-0.5 bg-gray-300 transform transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+            </div>
+          </button>
+
+          {/* Mobile Menu Overlay */}
+          <motion.div 
+            className="fixed top-0 right-0 h-screen w-64 bg-black/95 backdrop-blur-lg border-l border-gray-800 pt-20 md:hidden"
+            initial={{ x: "100%" }}
+            animate={{ x: isMenuOpen ? 0 : "100%" }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+          >
+            <div className="flex flex-col space-y-4 p-4">
+              {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item) => (
+                <motion.a
+                  key={item}
+                  href={`#${item.toLowerCase()}`}
+                  className="text-gray-300 hover:text-blue-400 transition-colors py-2 px-4 text-lg"
+                  whileTap={{ scale: 0.95 }}
+                  onClick={(e) => handleClick(e, item.toLowerCase())}
+                >
+                  {item}
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
         </div>
-
-        {/* Mobile Menu */}
-        <motion.div 
-          className={`absolute top-full left-0 right-0 bg-black/95 backdrop-blur-lg border-b border-gray-800 py-4 ${isMenuOpen ? 'flex' : 'hidden'} md:hidden flex-col items-center space-y-4`}
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: isMenuOpen ? 1 : 0, y: isMenuOpen ? 0 : -20 }}
-        >
-          {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item) => (
-            <motion.a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="text-gray-300 hover:text-blue-400 transition-colors px-4 py-2 w-full text-center"
-              whileTap={{ scale: 0.95 }}
-              onClick={(e) => handleClick(e, item.toLowerCase())}
-            >
-              {item}
-            </motion.a>
-          ))}
-        </motion.div>
       </div>
     </motion.nav>
   );
