@@ -1,16 +1,6 @@
 import { motion } from 'framer-motion'
 
 const Hero = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.2
-      }
-    }
-  }
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -81,7 +71,7 @@ const Hero = () => {
   ]
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center py-10 sm:py-20 px-4">
+    <section id="home" className="relative min-h-screen flex items-center justify-center pt-24 pb-10 sm:pt-32 sm:pb-20 px-4">
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

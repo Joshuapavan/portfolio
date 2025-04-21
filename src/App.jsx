@@ -21,8 +21,8 @@ function App() {
 
   const techStack = [
     {
-      name: 'React',
-      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg'
+      name: 'Java',
+      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg'
     },
     {
       name: 'Spring Boot',
@@ -31,6 +31,10 @@ function App() {
     {
       name: 'Ruby on Rails',
       logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/rails/rails-plain.svg'
+    },
+    {
+      name: 'React',
+      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg'
     },
     {
       name: 'Node.js',
@@ -73,10 +77,6 @@ function App() {
       name: 'Dart',
       logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/dart/dart-original.svg'
     },
-    {
-      name: 'Java',
-      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg'
-    }
   ]
 
   const experiences = [
