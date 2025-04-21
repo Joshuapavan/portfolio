@@ -78,8 +78,8 @@ function App() {
       logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/dart/dart-original.svg'
     },
     {
-      name: 'Android',
-      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original.svg'
+      name: 'Postman',
+      logo: 'https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg'
     },
     {
       name: 'Linux',
@@ -149,7 +149,7 @@ function App() {
         ) : (
           <>
             <Navigation />
-            <Hero />
+            <Hero techStack={techStack} />
             <About experiences={experiences} />
             <Skills techStack={techStack} />
             <Projects />

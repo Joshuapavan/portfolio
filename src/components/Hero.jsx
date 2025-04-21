@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-const Hero = () => {
+const Hero = ({ techStack }) => {
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -9,74 +9,6 @@ const Hero = () => {
       opacity: 1
     }
   }
-
-  const techStack = [
-    {
-        name: 'Java',
-        logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg'
-    },
-    {
-      name: 'Spring Boot',
-      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/spring/spring-original.svg'
-    },
-    {
-      name: 'Ruby on Rails',
-      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/rails/rails-plain.svg'
-    },
-    {
-        name: 'React',
-        logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg'
-    },
-    {
-      name: 'Node.js',
-      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg'
-    },
-    {
-        name: 'Express',
-        logo: 'https://www.vectorlogo.zone/logos/expressjs/expressjs-icon.svg',
-        className: 'invert brightness-0'
-    },
-    {
-      name: 'Flutter',
-      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/flutter/flutter-original.svg'
-    },
-    {
-      name: 'Kotlin',
-      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/kotlin/kotlin-original.svg'
-    },
-    {
-      name: 'Tailwind CSS',
-      logo: 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg'
-    },
-    {
-      name: 'Docker',
-      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg'
-    },
-    {
-      name: 'Git',
-      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg'
-    },
-    {
-      name: 'MySQL',
-      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg'
-    },
-    {
-      name: 'PostgreSQL',
-      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg'
-    },
-    {
-      name: 'Dart',
-      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/dart/dart-original.svg'
-    },
-    {
-      name: 'Android',
-      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original.svg'
-    },
-    {
-      name: 'Linux',
-      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg'
-    }
-  ]
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-24 pb-10 sm:pt-32 sm:pb-20 px-4">
