@@ -18,17 +18,10 @@ const Navigation = () => {
       transition={{ duration: 0.5 }}
       className="fixed w-full bg-black/80 backdrop-blur-lg z-50 py-4 border-b border-gray-800"
     >
-      <div className="container mx-auto px-4 flex justify-between items-center">
-        <motion.h1 
-          className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
-          whileHover={{ scale: 1.05 }}
-        >
-          Pavan G
-        </motion.h1>
-
-        {/* Mobile Menu Button */}
+      <div className="container mx-auto px-4 flex justify-center items-center relative">
+        {/* Mobile Menu Button - Position absolutely */}
         <button 
-          className="md:hidden p-2"
+          className="md:hidden p-2 absolute left-4"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <div className="w-6 h-5 flex flex-col justify-between">
@@ -38,8 +31,8 @@ const Navigation = () => {
           </div>
         </button>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8">
+        {/* Desktop Menu - Now centered */}
+        <div className="hidden md:flex space-x-12">
           {['Home', 'About', 'Technologies', 'Projects', 'Contact'].map((item) => (
             <motion.a
               key={item}
