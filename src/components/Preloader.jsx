@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 const Preloader = () => {
   const [text, setText] = useState('');
   const [isTypingDone, setIsTypingDone] = useState(false);
-  const fullText = "Loading Pavan's Portfolio...";
+  const fullText = "vi pavan.portfolio";
 
   useEffect(() => {
     let currentIndex = 0;
