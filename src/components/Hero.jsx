@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { scrollToSection } from '../utils/scroll'
 
 const Hero = ({ techStack }) => {
 
@@ -9,6 +10,11 @@ const Hero = ({ techStack }) => {
       opacity: 1
     }
   }
+
+  const handleClick = (e, id) => {
+    e.preventDefault();
+    scrollToSection(id);
+  };
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-24 pb-10 sm:pt-32 sm:pb-20 px-4">
@@ -57,6 +63,7 @@ const Hero = ({ techStack }) => {
               className="px-8 py-3 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-medium hover:shadow-glow transition-all duration-300"
               whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(59, 130, 246, 0.5)" }}
               whileTap={{ scale: 0.95 }}
+              onClick={(e) => handleClick(e, 'projects')}
             >
               View Projects
             </motion.a>
@@ -65,6 +72,7 @@ const Hero = ({ techStack }) => {
               className="px-8 py-3 rounded-full border border-gray-600 hover:border-blue-400 text-gray-300 hover:text-blue-400 font-medium transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={(e) => handleClick(e, 'contact')}
             >
               Get In Touch
             </motion.a>
