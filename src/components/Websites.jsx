@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 const Websites = () => {
   const [selectedId, setSelectedId] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const rotationDelay = 5000;
+  const rotationDelay = 3000;
 
   const websites = [
     {
