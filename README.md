@@ -1,4 +1,4 @@
-# Pavan G's Portfolio
+# Joshua Pavan's Portfolio
 
 A modern, responsive portfolio website built with React and Tailwind CSS showcasing my projects and skills.
 
@@ -24,27 +24,32 @@ A modern, responsive portfolio website built with React and Tailwind CSS showcas
 ## Getting Started
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/Joshuapavan/portfolio.git
 cd portfolio
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Create a `.env` file:
+
 ```bash
 VITE_WEB3FORMS_KEY=your_web3forms_key
 ```
 
 4. Start the development server:
+
 ```bash
 npm run dev
 ```
 
 5. Build for production:
+
 ```bash
 npm run build
 ```
