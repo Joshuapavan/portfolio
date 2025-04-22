@@ -50,7 +50,7 @@ const Hero = ({ techStack }) => {
               Full Stack Development & System Architecture
             </span>
             <span className="text-base sm:text-lg text-gray-400">
-              Passionate about crafting scalable solutions and delivering exceptional digital experiences through clean, efficient code
+              Passionate about crafting scalable solutions and delivering exceptional digital experiences through clean and efficient code
             </span>
           </motion.div>
           
