@@ -45,7 +45,7 @@ const Hero = ({ techStack }) => {
             variants={itemVariants}
             className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-6 md:mb-8 leading-relaxed"
           >
-            <span className="block mb-2">Lead Software Engineer with expertise in</span>
+            <span className="block mb-2">Software Engineer with expertise in</span>
             <span className="bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-transparent font-semibold block mb-2">
               Full Stack Development & System Architecture
             </span>
