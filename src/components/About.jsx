@@ -55,28 +55,37 @@ const About = ({ experiences }) => {
                   transition={{ delay: 0.2 * index }}
                 >
                   <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
-                    {/* Dot - Show on all screens */}
-                    <div className="absolute left-2 md:left-1/2 top-0 md:top-1/2 transform md:-translate-x-1/2 md:-translate-y-1/2 w-4 h-4 rounded-full bg-blue-500" />
+                    {/* Dot with pulse animation */}
+                    <div className="absolute left-2 md:left-1/2 top-0 md:top-1/2 transform md:-translate-x-1/2 md:-translate-y-1/2">
+                      <div className="w-4 h-4 rounded-full bg-gradient-to-r from-sky-400 to-blue-500" />
+                      <div className="absolute inset-0 w-4 h-4 rounded-full bg-sky-400 animate-ping opacity-30" />
+                    </div>
                     
                     {/* Date */}
                     <div className="w-full md:w-1/2 text-left md:text-right md:pr-8">
-                      <span className="text-blue-400 font-semibold">{item.date}</span>
+                      <span className="text-sky-400 font-semibold bg-gray-800/30 px-3 py-1 rounded-full">{item.date}</span>
                     </div>
                     
                     {/* Content */}
                     <div className="w-full md:w-1/2 md:pl-8">
-                      <div className="backdrop-blur-sm bg-gray-800/30 p-4 md:p-6 rounded-xl border border-gray-700/50 shadow-soft">
+                      <motion.div 
+                        className="backdrop-blur-sm bg-gray-800/30 p-4 md:p-6 rounded-xl border border-gray-700/50 shadow-soft hover:border-sky-500/30 transition-all duration-300"
+                        whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                      >
                         <div className="flex items-center gap-4 mb-4">
-                          <img 
-                            src={item.logo} 
-                            alt={item.company}
-                            className={`object-contain rounded-lg ${
-                              item.company === "CognitiveClouds" ? "w-12 h-12 sm:w-16 sm:h-16" : "w-10 h-10 sm:w-12 sm:h-12"
-                            }`}
-                          />
+                          <div className="relative group">
+                            <div className="absolute inset-0 bg-gradient-to-r from-sky-400 to-blue-500 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-300" />
+                            <img 
+                              src={item.logo} 
+                              alt={item.company}
+                              className={`relative object-contain rounded-lg bg-black/50 p-2 ${
+                                item.company === "CognitiveClouds" ? "w-12 h-12 sm:w-16 sm:h-16" : "w-10 h-10 sm:w-12 sm:h-12"
+                              }`}
+                            />
+                          </div>
                           <div>
-                            <h4 className="text-lg font-semibold text-white">{item.role}</h4>
-                            <h5 className="text-blue-400">{item.company}</h5>
+                            <h4 className="text-lg font-semibold bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-transparent">{item.role}</h4>
+                            <h5 className="text-sky-400">{item.company}</h5>
                           </div>
                         </div>
                         <p className="text-gray-400 text-sm mb-4">{item.description}</p>
@@ -84,13 +93,13 @@ const About = ({ experiences }) => {
                           {item.technologies.map((tech) => (
                             <span 
                               key={tech}
-                              className="px-2 py-1 text-xs rounded-full bg-gray-700/50 text-gray-300"
+                              className="px-3 py-1 text-xs rounded-full bg-black/30 text-gray-300 border border-gray-700/50 hover:border-sky-500/50 hover:text-sky-400 transition-colors duration-300"
                             >
                               {tech}
                             </span>
                           ))}
                         </div>
-                      </div>
+                      </motion.div>
                     </div>
                   </div>
                 </motion.div>
