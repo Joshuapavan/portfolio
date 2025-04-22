@@ -44,11 +44,9 @@ const Preloader = () => {
 
           {/* Terminal Content */}
           <div className="font-mono">
-            <div className="flex items-center text-gray-300 mb-2">
+            <div className="flex items-center text-gray-300">
               <span className="text-blue-400">~/portfolio</span>
               <span className="text-pink-500 mx-2">$</span>
-            </div>
-            <div className="flex items-center">
               <span className="text-gray-300">{text}</span>
               <motion.span
                 className="inline-block w-3 h-5 bg-gray-300 ml-1"
