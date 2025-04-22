@@ -6,7 +6,7 @@ const Skills = ({ techStack }) => {
         <section id="technologies" className="py-20">
             <div className="container mx-auto px-4">
                 <motion.h2 
-                    className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-12 text-center bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent leading-tight"
+                    className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-12 text-center bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-transparent leading-tight"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -33,7 +33,7 @@ const Skills = ({ techStack }) => {
                             alt={tech.name}
                             className={`w-12 h-12 group-hover:scale-110 transition-transform duration-300 ${tech.className || ''}`}
                         />
-                        <span className="text-gray-300 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-500 transition-colors duration-300">
+                        <span className="text-gray-300 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-sky-400 group-hover:to-blue-500 transition-colors duration-300">
                             {tech.name}
                         </span>
                         </div>

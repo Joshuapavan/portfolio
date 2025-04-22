@@ -36,7 +36,7 @@ const Hero = ({ techStack }) => {
             className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 md:mb-6 leading-tight"
           >
             <span>Hi, I'm </span>
-            <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-transparent">
               Pavan G
             </span>
           </motion.h1>
@@ -46,7 +46,7 @@ const Hero = ({ techStack }) => {
             className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-6 md:mb-8 leading-relaxed"
           >
             <span className="block mb-2">Lead Software Engineer with expertise in</span>
-            <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent font-semibold block mb-2">
+            <span className="bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-transparent font-semibold block mb-2">
               Full Stack Development & System Architecture
             </span>
             <span className="text-base sm:text-lg text-gray-400">
@@ -60,8 +60,8 @@ const Hero = ({ techStack }) => {
           >
             <motion.a
               href="#projects"
-              className="px-8 py-3 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-medium hover:shadow-glow transition-all duration-300"
-              whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(59, 130, 246, 0.5)" }}
+              className="px-8 py-3 rounded-full bg-gradient-to-r from-sky-400 to-blue-500 text-white font-medium hover:shadow-glow transition-all duration-300"
+              whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(14, 165, 233, 0.5)" }}
               whileTap={{ scale: 0.95 }}
               onClick={(e) => handleClick(e, 'projects')}
             >
@@ -69,7 +69,7 @@ const Hero = ({ techStack }) => {
             </motion.a>
             <motion.a
               href="#contact"
-              className="px-8 py-3 rounded-full border border-gray-600 hover:border-blue-400 text-gray-300 hover:text-blue-400 font-medium transition-all duration-300"
+              className="px-8 py-3 rounded-full border border-gray-600 hover:border-sky-400 text-gray-300 hover:text-sky-400 font-medium transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={(e) => handleClick(e, 'contact')}
@@ -102,7 +102,7 @@ const Hero = ({ techStack }) => {
                   alt={tech.name}
                   className={`w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 transition-transform duration-300 group-hover:scale-110 ${tech.className || ''}`}
                 />
-                <span className="text-xs sm:text-sm md:text-base font-medium bg-gradient-to-r from-gray-100 to-gray-300 group-hover:from-blue-400 group-hover:to-purple-500 bg-clip-text text-transparent transition-all duration-300">
+                <span className="text-xs sm:text-sm md:text-base font-medium bg-gradient-to-r from-gray-100 to-gray-300 group-hover:from-sky-400 group-hover:to-blue-500 bg-clip-text text-transparent transition-all duration-300">
                   {tech.name}
                 </span>
               </motion.div>
@@ -117,7 +117,7 @@ const Hero = ({ techStack }) => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="relative w-full aspect-square rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 p-1">
+          <div className="relative w-full aspect-square rounded-full bg-gradient-to-r from-sky-400 to-blue-500 p-1">
             <img 
               src="https://avatars.githubusercontent.com/u/79299848?v=4"
               alt="Pavan G"

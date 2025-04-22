@@ -13,7 +13,7 @@ const Contact = () => {
     <section id="contact" className="py-20">
       <div className="container mx-auto px-4">
         <motion.h2 
-          className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
+          className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-transparent"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -30,7 +30,7 @@ const Contact = () => {
             transition={{ delay: 0.2 }}
           >
             <div className="backdrop-blur-sm bg-gray-800/30 p-8 rounded-2xl border border-gray-700/50 shadow-soft h-full">
-              <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+              <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-transparent">
                 Let's Connect
               </h3>
               <div className="space-y-6">
@@ -157,7 +157,7 @@ const Contact = () => {
               
               <motion.button
                 type="submit"
-                className="w-full px-8 py-3 mt-6 rounded-lg bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-medium hover:shadow-glow transition-all duration-300"
+                className="w-full px-8 py-3 mt-6 rounded-lg bg-gradient-to-r from-sky-400 to-blue-500 text-white font-medium hover:shadow-glow transition-all duration-300"
                 whileHover={{ scale: 1.02, boxShadow: "0 0 20px rgba(59, 130, 246, 0.5)" }}
                 whileTap={{ scale: 0.98 }}
               >

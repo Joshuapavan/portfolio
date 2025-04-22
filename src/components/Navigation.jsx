@@ -26,13 +26,13 @@ const Navigation = () => {
               <motion.a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="text-gray-300 hover:text-blue-400 relative group text-sm lg:text-base"
+                className="text-gray-300 hover:text-sky-400 relative group text-sm lg:text-base"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={(e) => handleClick(e, item.toLowerCase())}
               >
                 {item}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 group-hover:w-full transition-all duration-300"/>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-sky-400 to-blue-500 group-hover:w-full transition-all duration-300"/>
               </motion.a>
             ))}
           </div>

@@ -5,9 +5,9 @@ const About = ({ experiences }) => {
   return (
     <section id="about" className="py-20">
         <div className="container mx-auto px-4 relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-3xl blur-3xl" />
+          <div className="absolute inset-0 bg-gradient-to-r from-sky-500/10 to-blue-500/10 rounded-3xl blur-3xl" />
           <motion.h2 
-            className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent relative"
+            className="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-transparent relative"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -37,12 +37,12 @@ const About = ({ experiences }) => {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
-            <h3 className="text-2xl font-semibold mb-8 text-center bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+            <h3 className="text-2xl font-semibold mb-8 text-center bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-transparent">
               Experience
             </h3>
             <div className="relative space-y-12">
               {/* Vertical Line - Show on all screens */}
-              <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-blue-500 to-purple-500 opacity-20" />
+              <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-sky-400 to-blue-500 opacity-20" />
 
               {/* Timeline Items */}
               {experiences.map((item, index) => (

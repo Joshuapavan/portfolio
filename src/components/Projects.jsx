@@ -4,9 +4,9 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20">
         <div className="container mx-auto px-4 relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-3xl blur-3xl" />
+          <div className="absolute inset-0 bg-gradient-to-r from-sky-500/10 to-blue-500/10 rounded-3xl blur-3xl" />
           <motion.h2 
-            className="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
+            className="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -60,7 +60,7 @@ const Projects = () => {
                 className="bg-black/50 rounded-xl overflow-hidden backdrop-blur-sm border border-gray-800 hover:border-blue-500/50 transition-all duration-300 shadow-soft"
               >
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                  <h3 className="text-xl font-bold mb-2 bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-transparent">
                     {project.title}
                   </h3>
                   <p className="text-gray-400 mb-4">

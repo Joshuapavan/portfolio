@@ -39,7 +39,7 @@ export default {
       },
       boxShadow: {
         'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
-        'glow': '0 0 15px rgba(249, 115, 22, 0.5)',
+        'glow': '0 0 15px rgba(14, 165, 233, 0.5)',  // Updated to sky-blue color
       },
       backdropFilter: {
         'none': 'none',

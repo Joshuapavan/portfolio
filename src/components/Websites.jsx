@@ -42,9 +42,9 @@ const Websites = () => {
   return (
     <section id="websites" className="py-20">
       <div className="container mx-auto px-4 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-3xl blur-3xl" />
+        <div className="absolute inset-0 bg-gradient-to-r from-sky-500/10 to-blue-500/10 rounded-3xl blur-3xl" />
         <motion.h2 
-          className="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
+          className="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-transparent"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -74,7 +74,7 @@ const Websites = () => {
                   transform: selectedId === site.title ? 'translateY(-50%)' : 'none'
                 }}
               >
-                <div className="bg-black/50 rounded-xl overflow-hidden backdrop-blur-sm border border-gray-800 hover:border-blue-500/50 transition-all duration-300 shadow-soft">
+                <div className="bg-black/50 rounded-xl overflow-hidden backdrop-blur-sm border border-gray-800 hover:border-sky-500/50 transition-all duration-300 shadow-soft">
                   <div className="aspect-video w-full relative bg-gray-900">
                     <img
                       src={`https://api.microlink.io?url=${site.url}&screenshot=true&meta=false&embed=screenshot.url`}
@@ -83,7 +83,7 @@ const Websites = () => {
                     />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                    <h3 className="text-xl font-bold bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-transparent">
                       {site.title}
                     </h3>
                     <p className="text-gray-400 mt-2 mb-4">{site.description}</p>
