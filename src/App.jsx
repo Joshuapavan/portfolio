@@ -55,7 +55,7 @@ function App() {
     },
     {
       name: 'Redis',
-      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original.svg'
+      logo: 'https://www.vectorlogo.zone/logos/redis/redis-icon.svg'
     },
     {
       name: 'Tailwind CSS',
