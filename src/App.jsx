@@ -54,6 +54,10 @@ function App() {
       logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/kotlin/kotlin-original.svg'
     },
     {
+      name: 'Redis',
+      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original.svg'
+    },
+    {
       name: 'Tailwind CSS',
       logo: 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg'
     },
@@ -84,10 +88,6 @@ function App() {
     {
       name: 'Linux',
       logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg'
-    },
-    {
-      name: 'Redis',
-      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original.svg'
     }
   ]
 
@@ -146,7 +146,8 @@ function App() {
   }, [isLoading])
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white relative">
+      <div className="stars" style={{ '--x': '50%', '--y': '50%' }} />
       <AnimatePresence mode="wait">
         {isLoading ? (
           <Preloader key="preloader" />

@@ -1,3 +1,67 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #0ea5e9, #3b82f6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #38bdf8, #2563eb);
+}
+
+/* Space Background */
+@keyframes stars {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-1000px);
+  }
+}
+
+.stars {
+  position: fixed;
+  inset: 0;
+  z-index: -1;  /* Changed from 0 to -1 */
+  overflow: hidden;
+  background: radial-gradient(circle at center, #000 0%, #0a0a0a 100%);
+}
+
+.stars::before,
+.stars::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(2px 2px at var(--x) var(--y),
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 50%);
+  background-size: 250px 250px;
+  animation: stars 20s linear infinite;
+}
+
+.stars::after {
+  background-image: radial-gradient(1px 1px at var(--x) var(--y),
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 50%);
+  background-size: 150px 150px;
+  animation: stars 15s linear infinite;
+  animation-delay: -5s;
+}
+
+/* The rest of your existing styles */
