@@ -84,6 +84,10 @@ function App() {
     {
       name: 'Linux',
       logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg'
+    },
+    {
+      name: 'Redis',
+      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original.svg'
     }
   ]
 
