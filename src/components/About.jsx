@@ -23,7 +23,7 @@ const About = ({ experiences }) => {
           >
             <p className="backdrop-blur-sm bg-gray-800/30 p-8 rounded-2xl shadow-soft border border-gray-700/50">
               Dynamic and Versatile Software Engineer with a proven track record in Backend Development. 
-              With over 3+ years of hands-on experience, I am eager to bring my passion for problem-solving 
+              With over 3.5+ years of hands-on experience, I am eager to bring my passion for problem-solving 
               and commitment to excellence to a forward-thinking team, contributing to cutting-edge projects 
               and embracing new challenges.
             </p>
