@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { AnimatePresence } from 'framer-motion'
@@ -16,80 +16,25 @@ import MagicLogo from "../src/assets/company_logos/magic_edtech_logo.jpeg"
 
 gsap.registerPlugin(ScrollTrigger)
 
+// Split techStack into critical and non-critical
+const criticalTechStack = [
+  {
+    name: 'Java',
+    logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg'
+  },
+  {
+    name: 'Spring Boot',
+    logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/spring/spring-original.svg'
+  },
+  {
+    name: 'Ruby on Rails',
+    logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/rails/rails-plain.svg'
+  }
+];
+
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-
-  const techStack = [
-    {
-      name: 'Java',
-      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg'
-    },
-    {
-      name: 'Spring Boot',
-      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/spring/spring-original.svg'
-    },
-    {
-      name: 'Ruby on Rails',
-      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/rails/rails-plain.svg'
-    },
-    {
-      name: 'React',
-      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg'
-    },
-    {
-      name: 'Node.js',
-      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg'
-    },
-    {
-      name: 'Express',
-      logo: 'https://www.vectorlogo.zone/logos/expressjs/expressjs-icon.svg',
-      className: 'invert brightness-0'
-    },
-    {
-      name: 'Flutter',
-      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/flutter/flutter-original.svg'
-    },
-    {
-      name: 'Kotlin',
-      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/kotlin/kotlin-original.svg'
-    },
-    {
-      name: 'Redis',
-      logo: 'https://www.vectorlogo.zone/logos/redis/redis-icon.svg'
-    },
-    {
-      name: 'Tailwind CSS',
-      logo: 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg'
-    },
-    {
-      name: 'Docker',
-      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg'
-    },
-    {
-      name: 'Git',
-      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg'
-    },
-    {
-      name: 'MySQL',
-      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg'
-    },
-    {
-      name: 'PostgreSQL',
-      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg'
-    },
-    {
-      name: 'Dart',
-      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/dart/dart-original.svg'
-    },
-    {
-      name: 'Postman',
-      logo: 'https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg'
-    },
-    {
-      name: 'Linux',
-      logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg'
-    }
-  ]
+  const [fullTechStack, setFullTechStack] = useState(criticalTechStack);
 
   const experiences = [
     {
@@ -141,9 +86,75 @@ function App() {
             },
           }
         )
-      })
+      });
+
+      // Load remaining tech stack after initial render
+      const loadRemainingTechStack = async () => {
+        const remainingStack = [
+          {
+            name: 'React',
+            logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg'
+          },
+          {
+            name: 'Node.js',
+            logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg'
+          },
+          {
+            name: 'Express',
+            logo: 'https://www.vectorlogo.zone/logos/expressjs/expressjs-icon.svg',
+            className: 'invert brightness-0'
+          },
+          {
+            name: 'Flutter',
+            logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/flutter/flutter-original.svg'
+          },
+          {
+            name: 'Kotlin',
+            logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/kotlin/kotlin-original.svg'
+          },
+          {
+            name: 'Redis',
+            logo: 'https://www.vectorlogo.zone/logos/redis/redis-icon.svg'
+          },
+          {
+            name: 'Tailwind CSS',
+            logo: 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg'
+          },
+          {
+            name: 'Docker',
+            logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg'
+          },
+          {
+            name: 'Git',
+            logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg'
+          },
+          {
+            name: 'MySQL',
+            logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg'
+          },
+          {
+            name: 'PostgreSQL',
+            logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg'
+          },
+          {
+            name: 'Dart',
+            logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/dart/dart-original.svg'
+          },
+          {
+            name: 'Postman',
+            logo: 'https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg'
+          },
+          {
+            name: 'Linux',
+            logo: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg'
+          }
+        ];
+        setFullTechStack(prev => [...prev, ...remainingStack]);
+      };
+
+      loadRemainingTechStack();
     }
-  }, [isLoading])
+  }, [isLoading]);
 
   return (
     <div className="min-h-screen bg-black text-white relative">
@@ -152,20 +163,20 @@ function App() {
         {isLoading ? (
           <Preloader key="preloader" />
         ) : (
-          <>
+          <Suspense fallback={<div className="loading">Loading...</div>}>
             <Navigation />
-            <Hero techStack={techStack} />
+            <Hero techStack={fullTechStack} />
             <About experiences={experiences} />
-            <Skills techStack={techStack} />
+            <Skills techStack={fullTechStack} />
             <Projects />
-            {/* <Websites/> */}
+            {/* <Websites /> */}
             <Contact />
             <Footer />
-          </>
+          </Suspense>
         )}
       </AnimatePresence>
     </div>
-  )
+  );
 }
 
 export default App

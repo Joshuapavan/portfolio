@@ -110,7 +110,7 @@ const Hero = ({ techStack }) => {
           </motion.div>
         </motion.div>
 
-        {/* Right side - Profile Image */}
+        {/* Right side - Profile Image - Now with eager loading */}
         <motion.div 
           className="flex-1 max-w-[250px] sm:max-w-[300px] md:max-w-md relative"
           initial={{ opacity: 0, scale: 0.95 }}
@@ -122,6 +122,8 @@ const Hero = ({ techStack }) => {
               src="https://avatars.githubusercontent.com/u/79299848?v=4"
               alt="Pavan G"
               className="rounded-full w-full h-full object-cover border-4 border-black"
+              loading="eager"
+              fetchPriority="high"
             />
           </div>
         </motion.div>
