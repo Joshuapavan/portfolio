@@ -63,7 +63,6 @@ const Navigation = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
             >
-              Pavan G
             </motion.div>
 
             {/* Desktop Menu */}
