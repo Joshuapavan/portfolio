@@ -7,21 +7,21 @@ const Websites = () => {
   const rotationDelay = 3000;
 
   const websites = [
-    {
-        title: "Krupashraya",
-        url: "https://krupashraya.vercel.app/",
-        description: "Trust"
-    },
+    // {
+    //     title: "Krupashraya",
+    //     url: "https://krupashraya.vercel.app/",
+    //     description: "Trust"
+    // },
     {
         title: "Blissara Consultancy",
         url: "https://www.blissaraconsultancy.com/",
         description: "Professional consultancy website"
       },
-    {
-      title: "Learning Management System",
-      url: "https://lms-fe-eight.vercel.app/",
-      description: "Educational platform interface"
-    },
+    // {
+    //   title: "Learning Management System",
+    //   url: "https://lms-fe-eight.vercel.app/",
+    //   description: "Educational platform interface"
+    // },
     {
         title: "Infynyx",
         url: "https://infynyx.vercel.app/",
