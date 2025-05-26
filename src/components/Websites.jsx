@@ -22,11 +22,11 @@ const Websites = () => {
     //   url: "https://lms-fe-eight.vercel.app/",
     //   description: "Educational platform interface"
     // },
-    {
-        title: "Infynyx",
-        url: "https://infynyx.vercel.app/",
-        description: "Tech startup website"
-    },
+    // {
+    //     title: "Infynyx",
+    //     url: "https://infynyx.vercel.app/",
+    //     description: "Tech startup website"
+    // },
   ].reverse();
 
   useEffect(() => {
