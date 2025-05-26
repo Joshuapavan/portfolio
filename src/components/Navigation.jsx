@@ -55,9 +55,19 @@ const Navigation = () => {
         />
 
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between md:justify-center h-16 md:h-20">
+          <div className="flex items-center justify-between h-16 md:h-20">
+            {/* Logo - Visible on mobile */}
+            <motion.div 
+              className="md:hidden text-xl font-bold bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-transparent"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+            >
+              Pavan G
+            </motion.div>
+
             {/* Desktop Menu */}
-            <div className="hidden md:flex items-center space-x-8 lg:space-x-12">
+            <div className="hidden md:flex items-center justify-center flex-1 space-x-8 lg:space-x-12">
               {menuItems.map((item) => (
                 <motion.a
                   key={item}
@@ -82,22 +92,23 @@ const Navigation = () => {
               ))}
             </div>
 
-            {/* Mobile Menu Button - Right aligned */}
-            <div className="flex md:hidden w-full justify-end">
+            {/* Mobile Menu Button */}
+            <div className="flex md:hidden">
               <motion.button 
-                className="relative w-8 h-8 flex items-center justify-center"
-                whileTap={{ scale: 0.9 }}
+                className="relative w-10 h-10 flex items-center justify-center rounded-lg bg-gradient-to-r from-sky-400/10 to-blue-500/10 border border-gray-700/50"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
-                <div className="flex flex-col items-center justify-center w-6 h-6">
-                  <span className={`w-full h-0.5 bg-gray-300 rounded-full transition-all duration-300 ${
-                    isMenuOpen ? 'rotate-45 translate-y-[0.3rem]' : ''
+                <div className="w-5 h-5 flex flex-col justify-center items-center">
+                  <span className={`w-full h-0.5 bg-gradient-to-r from-sky-400 to-blue-500 rounded-full transform transition-all duration-300 ${
+                    isMenuOpen ? 'rotate-45 translate-y-0.5' : '-translate-y-1'
                   }`} />
-                  <span className={`w-full h-0.5 bg-gray-300 rounded-full transition-all duration-300 mt-1.5 ${
-                    isMenuOpen ? 'opacity-0' : ''
+                  <span className={`w-full h-0.5 bg-gradient-to-r from-sky-400 to-blue-500 rounded-full transition-all duration-300 ${
+                    isMenuOpen ? 'opacity-0' : 'opacity-100'
                   }`} />
-                  <span className={`w-full h-0.5 bg-gray-300 rounded-full transition-all duration-300 mt-1.5 ${
-                    isMenuOpen ? '-rotate-45 -translate-y-[0.3rem]' : ''
+                  <span className={`w-full h-0.5 bg-gradient-to-r from-sky-400 to-blue-500 rounded-full transform transition-all duration-300 ${
+                    isMenuOpen ? '-rotate-45 -translate-y-0.5' : 'translate-y-1'
                   }`} />
                 </div>
               </motion.button>
@@ -106,33 +117,51 @@ const Navigation = () => {
         </div>
       </motion.nav>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay */}
       <motion.div 
         className="fixed inset-0 bg-black/95 backdrop-blur-xl z-40 md:hidden"
-        initial={{ opacity: 0, x: "100%" }}
+        initial={false}
         animate={{ 
           opacity: isMenuOpen ? 1 : 0,
-          x: isMenuOpen ? "0%" : "100%"
+          clipPath: isMenuOpen 
+            ? "circle(150% at top right)" 
+            : "circle(0% at top right)"
         }}
-        transition={{ type: "tween", duration: 0.3 }}
+        transition={{ 
+          type: "spring",
+          damping: 20,
+          stiffness: 100
+        }}
       >
-        <div className="flex flex-col items-center justify-center h-full space-y-8 pt-20">
-          {menuItems.map((item) => (
+        <div className="flex flex-col items-center justify-center h-full space-y-6">
+          {menuItems.map((item, index) => (
             <motion.a
               key={item}
               href={`#${item.toLowerCase()}`}
               className={`text-2xl font-medium ${
                 activeSection === item.toLowerCase()
-                  ? 'text-sky-400'
-                  : 'text-gray-300'
+                ? 'text-sky-400'
+                : 'text-gray-300'
               }`}
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: isMenuOpen ? 1 : 0, y: isMenuOpen ? 0 : 20 }}
-              transition={{ delay: isMenuOpen ? 0.2 : 0 }}
-              whileTap={{ scale: 0.95 }}
+              animate={{ 
+                opacity: isMenuOpen ? 1 : 0,
+                y: isMenuOpen ? 0 : 20
+              }}
+              transition={{ 
+                delay: isMenuOpen ? index * 0.1 : 0,
+                duration: 0.3
+              }}
               onClick={(e) => handleClick(e, item.toLowerCase())}
             >
               {item}
+              {activeSection === item.toLowerCase() && (
+                <motion.div
+                  layoutId="mobile-nav-active"
+                  className="h-0.5 w-full bg-gradient-to-r from-sky-400 to-blue-500 mt-1"
+                  transition={{ type: "spring", bounce: 0.25 }}
+                />
+              )}
             </motion.a>
           ))}
         </div>
